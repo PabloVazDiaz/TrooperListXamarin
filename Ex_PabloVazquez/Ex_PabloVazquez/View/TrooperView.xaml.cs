@@ -17,6 +17,12 @@ namespace Ex_PabloVazquez.View
 		{
 			InitializeComponent ();
             this.BindingContext = viewModel;
+            this.Title = "Briefing";
 		}
-	}
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("", $"{(this.BindingContext as TrooperViewModel).Name} goind to mission", "Ok");
+        }
+    }
 }
