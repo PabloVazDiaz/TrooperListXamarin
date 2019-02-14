@@ -1,4 +1,6 @@
-﻿using Ex_PabloVazquez.ViewModel;
+﻿using Ex_PabloVazquez.Model;
+using Ex_PabloVazquez.View;
+using Ex_PabloVazquez.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +18,14 @@ namespace Ex_PabloVazquez
             this.BindingContext = new MainViewModel();
         }
 
-        private void TrooperListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void TrooperListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Navigation.PushAsync();
+            var troop = e.SelectedItem as Trooper;
+            if (troop == null)
+                return;
+            await Navigation.PushAsync(new TrooperView(new TrooperViewModel(troop)));
 
+            TrooperListView.SelectedItem = null;
         }
     }
 }
