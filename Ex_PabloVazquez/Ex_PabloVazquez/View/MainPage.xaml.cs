@@ -13,5 +13,10 @@ namespace Ex_PabloVazquez
         {
             InitializeComponent();
         }
+
+        private void TrooperListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+
+        }
     }
 }

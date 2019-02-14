@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Ex_PabloVazquez"
+             x:Class="Ex_PabloVazquez.MainPage">
+
+    <ListView ItemsSource="{Binding Troopers}"
+              x:Name="TrooperListView"
+              HorizontalOptions="StartAndExpand"
+              VerticalOptions="StartAndExpand"
+              ItemSelected="TrooperListView_ItemSelected">
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
+                        <Label Text="{Binding Id}" HorizontalOptions="Start" Margin="5" />
+                        <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand" Margin="5" />
+                        <Label Text="{Binding Accuracy}" HorizontalOptions="EndAndExpand" Margin="5" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+
+</ContentPage>
