@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ex_PabloVazquez.Services
 {
-    interface IGetTroopersService
+    public interface IGetTroopersService
     {
         Task<List<Trooper>> GetAllTroopers();
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ex_PabloVazquez.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,12 @@ namespace Ex_PabloVazquez
         public MainPage()
         {
             InitializeComponent();
+            this.BindingContext = new MainViewModel();
         }
 
         private void TrooperListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            Navigation.PushAsync();
 
         }
     }
