@@ -7,8 +7,8 @@
             <Label Text="{Binding Id}"
                 VerticalOptions="Start" 
                 HorizontalOptions="Start" />
-            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Red">
-                <Label Text="{Binding Name}" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{Binding Color}">
+                <Label Text="{Binding Name}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold"/>
             </Frame>
             <Button Text="Send to mission" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Clicked="Button_Clicked"/>
         </StackLayout>
