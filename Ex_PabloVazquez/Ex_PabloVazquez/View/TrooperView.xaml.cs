@@ -22,7 +22,7 @@ namespace Ex_PabloVazquez.View
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("", $"{(this.BindingContext as TrooperViewModel).Name} goind to mission", "Ok");
+            DisplayAlert("", $"{(this.BindingContext as TrooperViewModel).Name} road to mission", "Ok");
         }
     }
 }

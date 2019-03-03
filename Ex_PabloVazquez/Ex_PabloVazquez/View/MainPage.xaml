@@ -8,15 +8,20 @@
               x:Name="TrooperListView"
               HorizontalOptions="FillAndExpand"
               VerticalOptions="FillAndExpand"
+			  HasUnevenRows="True"
               ItemSelected="TrooperListView_ItemSelected">
 
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand">
-                        <Label Text="{Binding Id}" HorizontalOptions="Start" Margin="5" />
-                        <Label Text="{Binding Name}" HorizontalOptions="StartAndExpand" Margin="5" />
-                        <Label Text="{Binding Accuracy}" HorizontalOptions="EndAndExpand" Margin="5" />
+                    <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+                        <Label Text="{Binding Id}" HorizontalOptions="Start" VerticalOptions="CenterAndExpand" Margin="5" />
+						<StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="StartAndExpand">
+							<Label Text="Name" FontAttributes="Bold" VerticalOptions="StartAndExpand" Margin="5"/>
+							<Label Text="{Binding Name}" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Margin="5" />
+						</StackLayout>
+                        
+                        <Label Text="{Binding Accuracy}" HorizontalOptions="EndAndExpand" Margin="5" VerticalOptions="CenterAndExpand" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

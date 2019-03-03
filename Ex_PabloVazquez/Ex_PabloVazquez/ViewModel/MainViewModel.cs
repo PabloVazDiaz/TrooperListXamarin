@@ -6,6 +6,7 @@ using System.Text;
 using Xamarin.Forms;
 using System.Linq;
 
+
 namespace Ex_PabloVazquez.ViewModel
 {
     public class MainViewModel : BindableObject
@@ -29,7 +30,6 @@ namespace Ex_PabloVazquez.ViewModel
         {
             getTrooperService = new GetTropeersService();
             ExecuteGetTroops = new Command(GetTroops);
-            troopers = allTroopers;
             ExecuteRefreshList = new Command(ResfreshList);
             MaxSkill = maxSkill;
             MinSkill = minSkill;
@@ -40,7 +40,7 @@ namespace Ex_PabloVazquez.ViewModel
             if (Troopers == null)
             {
                 allTroopers = await getTrooperService.GetAllTroopers();
-                Troopers = allTroopers.Where(x => x.Accuracy > MinSkill && x.Accuracy < MaxSkill).ToList();
+                Troopers =allTroopers.Where(x => x.Accuracy >= MinSkill && x.Accuracy < MaxSkill).OrderBy(x=>x.Accuracy).ToList();
             }
             
         }

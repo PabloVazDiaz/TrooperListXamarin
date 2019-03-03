@@ -6,11 +6,13 @@
         <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Label Text="{Binding Id}"
                 VerticalOptions="Start" 
-                HorizontalOptions="Start" />
+                HorizontalOptions="Start"
+				   FontAttributes="Bold"
+				   FontSize="Medium"/>
             <Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="{Binding Color}">
-                <Label Text="{Binding Name}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                <Label Text="{Binding Name}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="Large"/>
             </Frame>
-            <Button Text="Send to mission" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Clicked="Button_Clicked"/>
+            <Button Text="Send to mission" VerticalOptions="End" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
