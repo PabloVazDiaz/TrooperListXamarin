@@ -6,8 +6,8 @@
 
     <ListView ItemsSource="{Binding Troopers}"
               x:Name="TrooperListView"
-              HorizontalOptions="StartAndExpand"
-              VerticalOptions="StartAndExpand"
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand"
               ItemSelected="TrooperListView_ItemSelected">
 
         <ListView.ItemTemplate>

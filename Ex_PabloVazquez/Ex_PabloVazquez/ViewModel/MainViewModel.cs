@@ -12,6 +12,7 @@ namespace Ex_PabloVazquez.ViewModel
     {
         private List<Trooper> allTroopers;
         private List<Trooper> troopers;
+        public Command ExecuteGetTroops;
         public List<Trooper> Troopers
         {
             get => troopers;
@@ -25,9 +26,15 @@ namespace Ex_PabloVazquez.ViewModel
         public MainViewModel()
         {
             getTrooperService = new GetTropeersService();
-            allTroopers = getTrooperService.GetAllTroopers().Result;
+            ExecuteGetTroops = new Command(GetTroops);
             troopers = allTroopers;
             ExecuteRefreshList = new Command(ResfreshList);
+        }
+
+        private async void GetTroops()
+        {
+            allTroopers = await getTrooperService.GetAllTroopers();
+            Troopers = allTroopers;
         }
 
         private void ResfreshList()

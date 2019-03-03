@@ -27,5 +27,13 @@ namespace Ex_PabloVazquez
 
             TrooperListView.SelectedItem = null;
         }
+
+        
+
+        protected override void OnAppearing()
+        {
+            (this.BindingContext as MainViewModel).ExecuteGetTroops.Execute(null);
+            base.OnAppearing();
+        }
     }
 }
