@@ -12,10 +12,10 @@ namespace Ex_PabloVazquez
 {
     public partial class MainPage : ContentPage
     {
-        public MainPage()
+        public MainPage(int minSkill, int maxSkill)
         {
             InitializeComponent();
-            this.BindingContext = new MainViewModel();
+            this.BindingContext = new MainViewModel(minSkill, maxSkill);
         }
 
         private async void TrooperListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

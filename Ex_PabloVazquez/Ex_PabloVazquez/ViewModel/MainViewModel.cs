@@ -13,6 +13,8 @@ namespace Ex_PabloVazquez.ViewModel
         private List<Trooper> allTroopers;
         private List<Trooper> troopers;
         public Command ExecuteGetTroops;
+        private int MaxSkill;
+        private int MinSkill;
         public List<Trooper> Troopers
         {
             get => troopers;
@@ -23,18 +25,24 @@ namespace Ex_PabloVazquez.ViewModel
             }
         }
         public IGetTroopersService getTrooperService;
-        public MainViewModel()
+        public MainViewModel( int minSkill, int maxSkill)
         {
             getTrooperService = new GetTropeersService();
             ExecuteGetTroops = new Command(GetTroops);
             troopers = allTroopers;
             ExecuteRefreshList = new Command(ResfreshList);
+            MaxSkill = maxSkill;
+            MinSkill = minSkill;
         }
 
         private async void GetTroops()
         {
-            allTroopers = await getTrooperService.GetAllTroopers();
-            Troopers = allTroopers;
+            if (Troopers == null)
+            {
+                allTroopers = await getTrooperService.GetAllTroopers();
+                Troopers = allTroopers.Where(x => x.Accuracy > MinSkill && x.Accuracy < MaxSkill).ToList();
+            }
+            
         }
 
         private void ResfreshList()

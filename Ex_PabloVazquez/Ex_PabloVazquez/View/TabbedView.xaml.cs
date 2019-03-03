@@ -14,7 +14,18 @@ namespace Ex_PabloVazquez.View
     {
         public TabbedView ()
         {
+            
             InitializeComponent();
+            ContentPage cp = new MainPage(0, 25);
+            cp.Title = "Fail";
+            Children.Add(cp);
+            cp = new MainPage(25, 75);
+            cp.Title = "Mid Level";
+            Children.Add(cp);
+            cp = new MainPage(75, 100);
+            cp.Title = "High Level";
+            Children.Add(cp);
+            
         }
     }
 }

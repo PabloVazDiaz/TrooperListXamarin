@@ -13,7 +13,7 @@ namespace Ex_PabloVazquez
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Ex_PabloVazquez.MainPage());
+            MainPage = new NavigationPage(new Ex_PabloVazquez.View.TabbedView());
         }
 
         protected override void OnStart()
