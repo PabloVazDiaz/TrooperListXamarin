@@ -16,6 +16,7 @@ namespace Ex_PabloVazquez
         {
             InitializeComponent();
             this.BindingContext = new MainViewModel(minSkill, maxSkill);
+            
         }
 
         private async void TrooperListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)

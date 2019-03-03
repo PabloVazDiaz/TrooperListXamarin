@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:Ex_PabloVazquez"
              x:Class="Ex_PabloVazquez.MainPage">
 
-    <ListView ItemsSource="{Binding Troopers}"
+	<ListView ItemsSource="{Binding Troopers}"
+			  CachingStrategy="RecycleElement"
               x:Name="TrooperListView"
               HorizontalOptions="FillAndExpand"
               VerticalOptions="FillAndExpand"
